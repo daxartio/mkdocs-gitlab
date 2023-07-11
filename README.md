@@ -5,18 +5,18 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/daxartio/mkdocs-gitlab)](https://github.com/daxartio/mkdocs-gitlab)
 [![GitHub stars](https://img.shields.io/github/stars/daxartio/mkdocs-gitlab?style=social)](https://github.com/daxartio/mkdocs-gitlab)
 
+The plugin updates mkdocs config with Gitlab CI/CD variables.
+
+- CI_PROJECT_TITLE
+- CI_PROJECT_DESCRIPTION
+- CI_PROJECT_URL
+
 ## Installation
 
 ### pip
 
 ```
 pip install mkdocs-gitlab
-```
-
-### poetry
-
-```
-poetry add mkdocs-gitlab
 ```
 
 ## Usage
