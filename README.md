@@ -9,7 +9,9 @@ The plugin updates mkdocs config with Gitlab CI/CD variables.
 
 - CI_PROJECT_TITLE
 - CI_PROJECT_DESCRIPTION
+- CI_PAGES_URL
 - CI_PROJECT_URL
+- CI_PROJECT_PATH
 
 ## Installation
 

@@ -24,10 +24,14 @@ def test_on_config(plugin, mocker):
     os.environ["CI_PROJECT_TITLE"] = "Test"
     os.environ["CI_PROJECT_DESCRIPTION"] = "Test description"
     os.environ["CI_PROJECT_URL"] = "http://example.com"
+    os.environ["CI_PAGES_URL"] = "http://pages.example.com"
+    os.environ["CI_PROJECT_PATH"] = "group/test"
     config = mocker.Mock(spec=MkDocsConfig)
 
     plugin.on_config(config)
 
     assert config.site_name == "Test"
     assert config.site_description == "Test description"
-    assert config.site_url == "http://example.com"
+    assert config.site_url == "http://pages.example.com"
+    assert config.repo_url == "http://example.com"
+    assert config.repo_name == "group/test"

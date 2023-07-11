@@ -11,6 +11,7 @@ if TYPE_CHECKING:  # pragma: no cover
 CI_PROJECT_TITLE = "CI_PROJECT_TITLE"
 CI_PROJECT_DESCRIPTION = "CI_PROJECT_DESCRIPTION"
 CI_PROJECT_URL = "CI_PROJECT_URL"
+CI_PAGES_URL = "CI_PAGES_URL"
 CI_PROJECT_NAME = "CI_PROJECT_NAME"
 CI_PROJECT_PATH = "CI_PROJECT_PATH"
 CI_DEFAULT_BRANCH = "CI_DEFAULT_BRANCH"
@@ -20,6 +21,8 @@ CI_DEFAULT_BRANCH = "CI_DEFAULT_BRANCH"
 class SiteConfig:
     site_name: str
     site_url: Optional[str]
+    repo_url: Optional[str]
+    repo_name: Optional[str]
     site_description: str
 
 
@@ -27,10 +30,14 @@ def get_config_from_gitlab() -> SiteConfig:
     project_title = os.getenv(CI_PROJECT_TITLE, "Documentation")
     project_description = os.getenv(CI_PROJECT_DESCRIPTION, "")
     project_url = os.getenv(CI_PROJECT_URL)
+    pages_url = os.getenv(CI_PAGES_URL)
+    repo_name = os.getenv(CI_PROJECT_PATH)
 
     return SiteConfig(
         site_name=project_title,
-        site_url=project_url,
+        site_url=pages_url,
+        repo_url=project_url,
+        repo_name=repo_name,
         site_description=project_description,
     )
 
@@ -42,5 +49,7 @@ class MkDocsGitlabPlugin(BasePlugin):  # type: ignore
         config.site_name = site_config.site_name
         config.site_description = site_config.site_description
         config.site_url = site_config.site_url
+        config.repo_url = site_config.repo_url
+        config.repo_name = site_config.repo_name
 
         return config
