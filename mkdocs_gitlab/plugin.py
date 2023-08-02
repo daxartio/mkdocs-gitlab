@@ -52,4 +52,7 @@ class MkDocsGitlabPlugin(BasePlugin):  # type: ignore
         config.repo_url = site_config.repo_url
         config.repo_name = site_config.repo_name
 
+        if "mkdocs-gitlab" not in config.markdown_extensions:
+            config.markdown_extensions.append("mkdocs-gitlab")
+
         return config

@@ -23,6 +23,9 @@ keywords = []
 [tool.poetry.plugins."mkdocs.plugins"]
 "mkdocs-gitlab" = "mkdocs_gitlab.plugin:MkDocsGitlabPlugin"
 
+[tool.poetry.plugins."markdown.extensions"]
+"mkdocs-gitlab" = "mkdocs_gitlab.markdown:TOCExtension"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 mkdocs = "*"
@@ -37,6 +40,7 @@ pytest-deadfixtures = "^2.2.1"
 pytest-mock = "^3.10.0"
 ruff = "^0.0.255"
 toml = "^0.10.2"
+types-markdown = "^3.4.2.10"
 
 [tool.poetry.group.git.dependencies]
 commitizen = "^3.5.3"

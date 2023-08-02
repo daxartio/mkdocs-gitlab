@@ -13,6 +13,8 @@ The plugin updates mkdocs config with Gitlab CI/CD variables.
 - CI_PROJECT_URL
 - CI_PROJECT_PATH
 
+Also the pugin deletes the `[[_TOC_]]` or `[TOC]` tag.
+
 ## Installation
 
 ### pip
