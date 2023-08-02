@@ -22,9 +22,11 @@ keywords = []
 
 [tool.poetry.plugins."mkdocs.plugins"]
 "mkdocs-gitlab" = "mkdocs_gitlab.plugin:MkDocsGitlabPlugin"
+"gitlab" = "mkdocs_gitlab.plugin:MkDocsGitlabPlugin"
 
 [tool.poetry.plugins."markdown.extensions"]
 "mkdocs-gitlab" = "mkdocs_gitlab.markdown:TOCExtension"
+"gitlab" = "mkdocs_gitlab.markdown:TOCExtension"
 
 [tool.poetry.dependencies]
 python = "^3.8"

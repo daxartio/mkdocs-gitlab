@@ -29,7 +29,7 @@ pip install mkdocs-gitlab
 site_name: Title
 
 plugins:
-- mkdocs-gitlab
+- gitlab
 
 ```
 
