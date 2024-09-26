@@ -1,6 +1,6 @@
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "1.3.0"
+version = "1.4.0"
 tag_format = "$version"
 version_files = [
     "mkdocs_gitlab/__init__.py",
@@ -11,7 +11,7 @@ update_changelog_on_bump = true
 
 [tool.poetry]
 name = "mkdocs-gitlab"
-version = "1.3.0"
+version = "1.4.0"
 description = "Use Gitlab CI variables for your docs"
 authors = ["Danil Akhtarov <daxartio@gmail.com>"]
 license = "MIT"
