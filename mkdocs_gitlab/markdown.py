@@ -1,3 +1,4 @@
+import os
 from typing import TYPE_CHECKING, List
 
 from markdown.extensions import Extension
@@ -5,6 +6,8 @@ from markdown.preprocessors import Preprocessor
 
 if TYPE_CHECKING:  # pragma:no cover
     from markdown import core
+
+PREPROCESSOR_PRIORITY = int(os.getenv("MKDOCS_GITLAB_PREPROCESSOR_PRIORITY", "175"))
 
 
 class TOCPreprocessor(Preprocessor):
@@ -19,4 +22,4 @@ class TOCPreprocessor(Preprocessor):
 
 class TOCExtension(Extension):
     def extendMarkdown(self, md: "core.Markdown") -> None:  # noqa:N802
-        md.preprocessors.register(TOCPreprocessor(md), "toc", 175)
+        md.preprocessors.register(TOCPreprocessor(md), "toc", PREPROCESSOR_PRIORITY)
