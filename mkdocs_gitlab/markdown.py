@@ -11,7 +11,7 @@ class TOCPreprocessor(Preprocessor):
     def run(self, lines: List[str]) -> List[str]:
         new_lines = []
         for line in lines:
-            if line.strip() in ["[[_TOC_]]", "[TOC]"]:
+            if line.strip() in ["[[_TOC_]]", "[TOC]", "[[_toc_]]", "[toc]"]:
                 continue
             new_lines.append(line)
         return new_lines

@@ -9,6 +9,8 @@ def test_toc():
             "# Gitlab",
             "[[_TOC_]]",
             "[TOC]",
+            "[[_toc_]]",
+            "[toc]",
         ]
     )
     html = markdown(
